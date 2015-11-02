@@ -20,11 +20,11 @@ function init(){
 
 function interactWithDisk(){
   var winningMessage = {};
-  winningMessage.perfect = ['PERFECT!',' Congratulations, you completed this in the minimum number of moves.'];
-  winningMessage.normal = ['Well done','You finished in ' + numOfMoves+ ' moves. This problem could have been solved in '+ perfectScore + ' moves.'];
   thePiece = $(this).children().first();
   if (!pieceSelected) selectDisk(thePiece, $(this));
   else if (pieceSelected) activeDisk(thePiece, $(this));
+  winningMessage.perfect = ['PERFECT!',' Congratulations, you completed this in the minimum number of moves.'];
+  winningMessage.normal = ['Well done','You finished in ' + numOfMoves + ' moves. This problem could have been solved in '+ perfectScore + ' moves.'];
   if ($('#winningTower').children().length ==numOfDisks){
 
     $('#winningTower').empty();
@@ -53,9 +53,10 @@ function selectDisk(thePiece,$this){
 }
 
 function startGame(){
+  var value = $('#numOfDisks').val();
   $('.gameArea').css('visibility','visible');
   $('#startPanel').hide();
-  numOfDisks = $('#numOfDisks').val();
+  numOfDisks = value < 7 && value > 1 ? value : 3 ;
   perfectScore = Math.pow(2,numOfDisks)-1;
   console.log(perfectScore);
   var arr = [];
