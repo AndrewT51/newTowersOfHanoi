@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>The Game</h1>
+
+    <div class="gameArea">
+
+      <div class="tower" data-weight='9'></div>
+      <div class="tower" data-weight='9'></div>
+      <div class="tower" id='winningTower' data-weight='9'>
+    
+      </div>
+
+    </div>
+    <div id='startPanel'>
+      Select difficulty:<input type="number" min='2' value='3' max='6' id='numOfDisks'>
+      <button id="startButton">Start Game</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
